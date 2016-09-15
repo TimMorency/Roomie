@@ -49,4 +49,13 @@ public class roomMateDao {
         criteria.add(Restrictions.eq(fieldName, searchVal));
         return criteria.list();
     }
+
+    public roomMate deleteRoomMate(int id) {
+        roomMate rm = getRoomMate(id);
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.delete(rm);
+        session.getTransaction().commit();
+        return rm;
+    }
 }

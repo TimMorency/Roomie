@@ -14,6 +14,7 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * Created by Tim on 9/13/2016.
+ * comments ++
  */
 public class roomMateDaoTest {
     private final Logger logger = Logger.getLogger(this.getClass());
@@ -62,6 +63,15 @@ public class roomMateDaoTest {
         rms = rmd.searchRoomMates("firstName", "Tim");
         logger.info(rms);
         assertTrue(rms.size() > 0);
+    }
+
+    @Test
+    public void testDelete() {
+        roomMateDao rmd = new roomMateDao();
+        roomMate rm = rmd.insertNewRoomMate("TestDelete", "testLast", "test@test.com", "608-123-7890");
+        logger.info(rm.getId());
+        roomMate rm2 = rmd.deleteRoomMate(rm.getId());
+        assertEquals(rm2.getId(), rm.getId());
     }
 }
 
