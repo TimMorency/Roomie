@@ -12,6 +12,10 @@ import java.util.List;
 
 /**
  * Created by Tim on 9/13/2016.
+ * comments ++
+ * need to add lookup on the rooMate object in database.
+ * also need to fix name capitalization in java classes.
+ * add new object for house and add chores/ bills as well.
  */
 public class roomMateDao {
 
