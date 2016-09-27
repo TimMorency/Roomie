@@ -21,8 +21,8 @@
         <property name="show_sql">true</property>-->
 
         <!-- List the annotated com.tmorency.edu.entity class/es -->
-        <mapping class="com.tmorency.edu.entity.roomMate"/>
-
+        <mapping class="com.tmorency.edu.entity.RoomMate"/>
+        <mapping class="com.tmorency.edu.entity.Rental"/>
     </session-factory>
 
 </hibernate-configuration>

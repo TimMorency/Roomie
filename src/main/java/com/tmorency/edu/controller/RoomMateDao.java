@@ -1,6 +1,6 @@
 package com.tmorency.edu.controller;
 
-import com.tmorency.edu.entity.roomMate;
+import com.tmorency.edu.entity.RoomMate;
 import com.tmorency.edu.persistence.SessionFactoryProvider;
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
@@ -17,45 +17,40 @@ import java.util.List;
  * also need to fix name capitalization in java classes.
  * add new object for house and add chores/ bills as well.
  */
-public class roomMateDao {
+public class RoomMateDao {
 
     private final Logger logger = Logger.getLogger(this.getClass());
 
-    public List<roomMate> getAllRoomies() {
-        List<roomMate> rms = new ArrayList<roomMate>();
+    public List<RoomMate> getAllRoomies() {
+        List<RoomMate> rms = new ArrayList<RoomMate>();
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        rms = session.createCriteria(roomMate.class).list();
+        rms = session.createCriteria(RoomMate.class).list();
         return rms;
     }
 
-    public roomMate getRoomMate(int id) {
+    public RoomMate getRoomMate(int id) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        roomMate rm = (roomMate) session.get(roomMate.class, id);
+        RoomMate rm = (RoomMate) session.get(RoomMate.class, id);
         return rm;
     }
 
-    public roomMate insertNewRoomMate(String firstName, String lastName, String email, String phoneNumber) {
+    public RoomMate insertNewRoomMate(RoomMate rm) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         session.beginTransaction();
-        roomMate rmNew = new roomMate();
-        rmNew.setEmail(email);
-        rmNew.setFirstName(firstName);
-        rmNew.setLastName(lastName);
-        rmNew.setPhoneNumber(phoneNumber);
-        session.save(rmNew);
+        session.save(rm);
         session.getTransaction().commit();
-        return rmNew;
+        return rm;
     }
 
-    public List<roomMate> searchRoomMates(String fieldName, String searchVal) {
+    public List<RoomMate> searchRoomMates(String fieldName, String searchVal) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        Criteria criteria = session.createCriteria(roomMate.class);
+        Criteria criteria = session.createCriteria(RoomMate.class);
         criteria.add(Restrictions.eq(fieldName, searchVal));
         return criteria.list();
     }
 
-    public roomMate deleteRoomMate(int id) {
-        roomMate rm = getRoomMate(id);
+    public RoomMate deleteRoomMate(int id) {
+        RoomMate rm = getRoomMate(id);
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         session.beginTransaction();
         session.delete(rm);
