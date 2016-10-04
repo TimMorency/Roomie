@@ -6,5 +6,6 @@
   </head>
   <body>
     Hello
+  <a href="/admin/login.jsp">Login?</a>
   </body>
 </html>
