@@ -35,18 +35,20 @@ public class RoomMate {
     @Column(name = "rental_id")
     private int rentalId;
 
+    @Column(name = "user_name_fk")
+    private String user_name_fk;
+
     public RoomMate() {
 
     }
 
-    public RoomMate(String firstName, String lastName, int id,
-                    String email, String phoneNumber, int rentalId) {
+    public RoomMate(String firstName, String lastName, String email, String phoneNumber, int rentalId, String user_name_fk) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.id = id;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.rentalId = rentalId;
+        this.user_name_fk = user_name_fk;
     }
 
     public int getId() {
@@ -98,12 +100,25 @@ public class RoomMate {
         this.rentalId = rentalId;
     }
 
+
+    public String getUser_name_fk() {
+        return user_name_fk;
+    }
+
+    public void setUser_name_fk(String user_name_fk) {
+        this.user_name_fk = user_name_fk;
+    }
+
     @Override
     public String toString() {
-        return "RoomMate{firstName='" + firstName + "'," +
-                "lastName='" + lastName + "'," +
-                "email='" + email + "'," +
-                "phone='" + phoneNumber + "'," +
-                "id='" + id + "'}";
+        return "RoomMate{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", rentalId=" + rentalId +
+                ", user_name_fk=" + user_name_fk +
+                '}';
     }
 }

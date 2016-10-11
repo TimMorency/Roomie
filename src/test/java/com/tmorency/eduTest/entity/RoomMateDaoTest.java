@@ -2,6 +2,7 @@ package com.tmorency.eduTest.entity;
 
 import com.tmorency.edu.controller.RoomMateDao;
 import com.tmorency.edu.entity.RoomMate;
+import com.tmorency.edu.entity.Users;
 import org.apache.log4j.Logger;
 import org.junit.*;
 
@@ -45,6 +46,7 @@ public class RoomMateDaoTest {
         rm1.setEmail("test@test.com");
         rm1.setPhoneNumber("608-123-4567");
         rm1.setRentalId(1);
+        rm1.setUser_name_fk("admin");
         RoomMate rm = rmd.insertNewRoomMate(rm1);
         logger.info(rm);
         assertEquals("TestFirst", rm.getFirstName());
@@ -81,6 +83,7 @@ public class RoomMateDaoTest {
         rm1.setEmail("test@test.com");
         rm1.setPhoneNumber("608-123-4567");
         rm1.setRentalId(1);
+        rm1.setUser_name_fk("admin");
         RoomMate rm = rmd.insertNewRoomMate(rm1);
         logger.info(rm.getId());
         RoomMate rm2 = rmd.deleteRoomMate(rm.getId());
