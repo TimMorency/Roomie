@@ -18,3 +18,9 @@
 # Week 7
 
 - working on finishing database connections 1 hr.
+
+- need to work on Users/Roommates, need to restrict Usernames to be unique.
+    - add constraint to database field
+    - this means add Dao for users
+    - redo tests for Roommate
+    - this should fix it.
