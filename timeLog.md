@@ -10,3 +10,11 @@
 
 - 2 hours wednesday working on getting dao working initially.
 - 2 hours thursday on finishing first dao.
+
+# Week 4-6
+
+- wasn't tracking so well...
+
+# Week 7
+
+- working on finishing database connections 1 hr.
