@@ -23,6 +23,11 @@
         <!-- List the annotated com.tmorency.edu.entity class/es -->
         <mapping class="com.tmorency.edu.entity.RoomMate"/>
         <mapping class="com.tmorency.edu.entity.Rental"/>
+        <mapping class="com.tmorency.edu.entity.Bills"/>
+        <mapping class="com.tmorency.edu.entity.Chores"/>
+        <mapping class="com.tmorency.edu.entity.UserBills"/>
+        <mapping class="com.tmorency.edu.entity.UserChores"/>
+        <mapping class="com.tmorency.edu.entity.Users"/>
     </session-factory>
 
 </hibernate-configuration>

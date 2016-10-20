@@ -24,3 +24,8 @@
     - this means add Dao for users
     - redo tests for Roommate
     - this should fix it.
+    
+# Week 8 
+
+- add ticketing api to use for chores and bills
+
