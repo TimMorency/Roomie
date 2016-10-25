@@ -40,6 +40,20 @@ public class Rental {
     @Column(name = "rent")
     private int rent;
 
+    public Rental() {
+    }
+
+    public Rental(String address, String city, String state,
+                  String zip, Date lease_start, Date lease_end, int rent) {
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+        this.lease_start = lease_start;
+        this.lease_end = lease_end;
+        this.rent = rent;
+    }
+
     public int getId() {
         return id;
     }
