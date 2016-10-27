@@ -13,6 +13,7 @@
         <label for="Password">Password</label>
         <input type="PASSWORD" class="form-control" id="Password" placeholder="Password" NAME="j_password">
     </div>
+    <input TYPE="SUBMIT" VALUE="Log In" class="form-control" />
     </div>
 </FORM>
 <jsp:include page="footer.jsp"/>
