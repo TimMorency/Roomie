@@ -8,8 +8,8 @@ To change this template use File | Settings | File Templates.
 <nav class="navbar navbar-default" style="background-color:lightgoldenrodyellow;">
 <div class="container-fluid" style="background-color:lightgoldenrodyellow;">
     <div class="navbar-header" style="background-color:lightgoldenrodyellow;">
-        <a class="navbar-brand" href="/admin/login.jsp">login</a>
-        <a class="navbar-brand" href="#">Sign Up</a>
+        <a class="navbar-brand" href="/admin/login.jsp">Login</a>
+        <a class="navbar-brand" href="/signup.jsp">Sign Up</a>
         <a class="navbar-brand" href="#">How It Works</a>
     </div>
 

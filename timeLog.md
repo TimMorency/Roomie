@@ -34,3 +34,10 @@
 - wrote some tests
 - wrote some pojos for team project.
 
+# week 10
+
+- need to add how people will setup with their house.
+    - maybe they search for their address?
+    - how they setup a house?
+    - add roommates function?
+    
