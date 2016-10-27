@@ -39,7 +39,7 @@ public class UserBillsDao {
         return rm;
     }
 
-    public List<UserBills> searchUserBillss(String fieldName, String searchVal) {
+    public List<UserBills> searchUserBillss(String fieldName, int searchVal) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(UserBills.class);
         criteria.add(Restrictions.eq(fieldName, searchVal));

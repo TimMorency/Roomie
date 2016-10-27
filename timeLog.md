@@ -29,3 +29,8 @@
 
 - add ticketing api to use for chores and bills
 
+# Week 9
+
+- wrote some tests
+- wrote some pojos for team project.
+

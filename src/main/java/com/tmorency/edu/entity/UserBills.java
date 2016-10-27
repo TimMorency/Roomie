@@ -35,8 +35,7 @@ public class UserBills {
 
     }
 
-    public UserBills(int id, int roommate_id, int bill_id, int split_amt, Date pay_by) {
-        this.id = id;
+    public UserBills(int roommate_id, int bill_id, int split_amt, Date pay_by) {
         this.roommate_id = roommate_id;
         this.bill_id = bill_id;
         this.split_amt = split_amt;
