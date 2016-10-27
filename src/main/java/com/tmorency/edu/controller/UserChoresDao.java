@@ -39,7 +39,7 @@ public class UserChoresDao {
         return rm;
     }
 
-    public List<UserChores> searchUserChoress(String fieldName, String searchVal) {
+    public List<UserChores> searchUserChoress(String fieldName, int searchVal) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(UserChores.class);
         criteria.add(Restrictions.eq(fieldName, searchVal));
