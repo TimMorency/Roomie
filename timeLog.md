@@ -40,4 +40,7 @@
     - maybe they search for their address?
     - how they setup a house?
     - add roommates function?
-    
+    - need to add user role aditions 2 more head of house/ room mate
+    - finish setup for that. 
+    - add emails when house is added.
+    - add home page tab for house.
