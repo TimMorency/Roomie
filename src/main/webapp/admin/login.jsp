@@ -5,6 +5,8 @@
     <title>login</title>
 </head>
 <body>
+<jsp:include page="loggedInHeader.jsp"></jsp:include>
 success
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
