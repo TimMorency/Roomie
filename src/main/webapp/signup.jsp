@@ -104,10 +104,12 @@
             <label for="Password">Password</label>
             <input type="password" name="Password" class="form-control" id="Password" >
         </div>
-        <button type="submit" class="btn btn-default col-sm-offset-3"
-                data-disable="true">Submit
-        </button>
+
         </div>
+        <br/>
+        <button type="submit" class="btn btn-default col-sm-offset-3"
+                data-disable="true" style="display: block;">Submit
+        </button>
     </form>
 </div>
 <jsp:include page="footer.jsp"/>

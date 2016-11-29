@@ -28,6 +28,7 @@
         <mapping class="com.tmorency.edu.entity.UserBills"/>
         <mapping class="com.tmorency.edu.entity.UserChores"/>
         <mapping class="com.tmorency.edu.entity.Users"/>
+        <mapping class="com.tmorency.edu.entity.UserRoles"/>
     </session-factory>
 
 </hibernate-configuration>
