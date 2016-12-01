@@ -30,16 +30,39 @@ public class UserBills {
     @Column(name = "pay_by")
     private Date pay_by;
 
+    @Column(name = "paid_amt")
+    private int paid_amt;
+
+    @Column(name = "paid")
+    private boolean paid;
 
     public UserBills() {
 
     }
 
-    public UserBills(int roommate_id, int bill_id, int split_amt, Date pay_by) {
-        this.roommate_id = roommate_id;
+    public UserBills(int bill_id, int roommate_id, int split_amt, Date pay_by, int paid_amt, boolean paid) {
         this.bill_id = bill_id;
+        this.roommate_id = roommate_id;
         this.split_amt = split_amt;
         this.pay_by = pay_by;
+        this.paid_amt = paid_amt;
+        this.paid = paid;
+    }
+
+    public int getPaid_amt() {
+        return paid_amt;
+    }
+
+    public void setPaid_amt(int paid_amt) {
+        this.paid_amt = paid_amt;
+    }
+
+    public boolean isPaid() {
+        return paid;
+    }
+
+    public void setPaid(boolean paid) {
+        this.paid = paid;
     }
 
     public int getId() {
@@ -90,6 +113,8 @@ public class UserBills {
                 ", bill_id=" + bill_id +
                 ", split_amt=" + split_amt +
                 ", pay_by=" + pay_by +
+                ", paid_amt=" + paid_amt +
+                ", paid=" + paid +
                 '}';
     }
 }

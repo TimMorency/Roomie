@@ -1,5 +1,6 @@
 package com.tmorency.edu.controller;
 
+import com.tmorency.edu.entity.Bills;
 import com.tmorency.edu.entity.UserBills;
 import com.tmorency.edu.persistence.SessionFactoryProvider;
 import org.apache.log4j.Logger;
@@ -44,6 +45,14 @@ public class UserBillsDao {
         Criteria criteria = session.createCriteria(UserBills.class);
         criteria.add(Restrictions.eq(fieldName, searchVal));
         return criteria.list();
+    }
+
+    public List<UserBills> searchInUserBills(List<Integer> bs) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Criteria criteria = session.createCriteria(UserBills.class);
+        criteria.add(Restrictions.in("bill_id", bs));
+        List<UserBills> returnList = criteria.list();
+        return returnList;
     }
 
     public UserBills deleteUserBills(int id) {

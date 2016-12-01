@@ -55,7 +55,7 @@ public class ChoresDaoTest {
     @Test
     public void searchChores() throws Exception {
         List<Chores> rms = new ArrayList<Chores>();
-        rms = rmd.searchChores("chore_name", "test");
+        rms = rmd.searchChores("rental_id", 1);
         logger.info(rms);
         assertTrue(rms.size() > 0);
     }

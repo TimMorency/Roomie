@@ -8,10 +8,10 @@ To change this template use File | Settings | File Templates.
 <nav class="navbar navbar-default" style="background-color:lightgoldenrodyellow;">
     <div class="container-fluid" style="background-color:lightgoldenrodyellow;">
         <div class="navbar-header" style="background-color:lightgoldenrodyellow;">
-            <a class="navbar-brand" href="login.jsp">Home</a>
-            <a class="navbar-brand" href="Bills.jsp">Bills</a>
-            <a class="navbar-brand" href="Chores.jsp">Chores</a>
-            <a class="navbar-brand" href="AddBillsChores.jsp">Add Bills/Chores</a>
+            <a class="navbar-brand" href="/admin/home">Home</a>
+            <a class="navbar-brand" href="/admin/bill">Bills</a>
+            <a class="navbar-brand" href="/admin/chore">Chores</a>
+            <a class="navbar-brand" href="/admin/AddBillsChores.jsp">Add Bills/Chores</a>
         </div>
 
     </div>

@@ -12,6 +12,9 @@
             <form-error-page>/admin/login-error.jsp</form-error-page>
         </form-login-config>
     </login-config>
+    <security-role>
+        <role-name>administrator</role-name>
+    </security-role>
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>admin</web-resource-name>

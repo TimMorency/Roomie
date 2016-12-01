@@ -50,7 +50,7 @@ public class UserBillsDaoTest {
 
     @Test
     public void insertNewUserBills() throws Exception {
-        UserBills ub = new UserBills(1, 1, 10, new Date());
+        UserBills ub = new UserBills(1, 1, 10, new Date(), 1, true);
         UserBills ub2 = rmd.insertNewUserBills(ub);
 
         assert(ub2.getId() > 0);

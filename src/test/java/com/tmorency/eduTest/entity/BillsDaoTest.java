@@ -61,7 +61,7 @@ public class BillsDaoTest {
     @Test
     public void searchBills() throws Exception {
         List<Bills> rms = new ArrayList<Bills>();
-        rms = bl.searchBills("bill_name", "Name");
+        rms = bl.searchBills("bill_amt", 10);
         logger.info(rms);
         assertTrue(rms.size() > 0);
     }
