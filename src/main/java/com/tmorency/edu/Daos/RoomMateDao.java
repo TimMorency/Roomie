@@ -55,6 +55,17 @@ public class RoomMateDao {
         return rms;
     }
 
+
+    public List<RoomMate> searchRoomMatesInt(String fieldName, int searchVal) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Criteria criteria = session.createCriteria(RoomMate.class);
+        criteria.add(Restrictions.eq(fieldName, searchVal));
+        List<RoomMate> rms = new ArrayList<RoomMate>();
+        rms = criteria.list();
+        session.close();
+        return rms;
+    }
+
     public RoomMate deleteRoomMate(int id) {
         RoomMate rm = getRoomMate(id);
         Session session = SessionFactoryProvider.getSessionFactory().openSession();

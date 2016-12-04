@@ -19,15 +19,13 @@ public class BillCreator {
     public UsersDao ud;
     public RentalDao rd;
     public RoomMateDao rmd;
-    public Bills insertedBill;
     public String uName;
 
-    public BillCreator(String userName, Bills createdBill) {
+    public BillCreator(String userName) {
         bd = new BillsDao();
         ud = new UsersDao();
         rd = new RentalDao();
         rmd = new RoomMateDao();
-        insertedBill = createdBill;
         uName = userName;
     }
 
@@ -35,13 +33,22 @@ public class BillCreator {
     }
 
     public List<RoomMate> getAllOtherRoomMates() {
-        return null;
+        List<RoomMate> rms = rmd.searchRoomMates("user_name_fk", uName);
+        RoomMate roomie = rms.get(0);
+        List<RoomMate> returners = rmd.searchRoomMatesInt("rentalId", roomie.getRentalId());
+        return returners;
     }
+
+
     public Rental getRental() {
-        return null;
+        List<RoomMate> rms = rmd.searchRoomMates("user_name_fk", uName);
+        RoomMate roomie = rms.get(0);
+        Rental r = rd.getRental(roomie.getRentalId());
+        return r;
     }
-    public Bills insertBill() {
-        return null;
+    public Bills insertBill(Bills insertedBill) {
+        Bills returnBill = bd.insertNewBills(insertedBill);
+        return returnBill;
     }
 
 

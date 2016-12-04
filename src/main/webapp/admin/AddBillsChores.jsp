@@ -1,4 +1,4 @@
-'''''''''''''''''''''''8888888888888888888888888888<%--
+<%--
   Created by IntelliJ IDEA.
   User: Tim
   Date: 11/28/2016
@@ -34,37 +34,37 @@
     </div> -->
     <div class="form-group" style="width: 60%; float: left; margin: 2em;">
         Chore Name
-        <input type="text" class="form-control" name="choreName">
+        <input type="text" class="form-control" name="choreName" required>
     </div>
     <div class="form-group" style="width: 60%; float: left; margin: 2em;">
         Chore Description
-        <input type="text" class="form-control" id="choreDescription">
+        <input type="text" class="form-control" id="choreDescription" required>
     </div>
     <div class="form-group" style="width: 60%; float: left; margin: 2em;">
         Due Date
-        <input type="date" class="form-control" name="dueDate" id="DueDate">
+        <input type="date" class="form-control" name="dueDate" id="DueDate" required>
     </div>
 
-    <button TYPE="SUBMIT" VALUE="Submit" class="form-control" />
+    <button TYPE="SUBMIT" VALUE="Submit" class="form-control">Submit</button>
 </form>
 </div>
 
     <div style="width:45%; float: right;">
-        <form>
+        <form action="/admin/billIn" method="GET">
             <h2>Add a Bill</h2>
             <div class="form-group" style="width: 60%; float: left; margin: 2em;">
                 Bill Name
-                <input type="text" class="form-control" id="billName">
+                <input type="text" class="form-control" id="billName" name="billName" required>
             </div>
             <div class="form-group" style="width: 60%; float: left; margin: 2em;">
                 Amount
-                <input type="number" class="form-control" id="Amt">
+                <input type="number" class="form-control" id="Amt" name="amt" required>
             </div>
             <div class="form-group" style="width: 60%; float: left; margin: 2em;">
                 <label for="DueDate1">Due Date</label>
-                <input type="date" class="form-control" id="DueDate1">
+                <input type="date" class="form-control" id="DueDate1" name="DueDate1" required>
             </div>
-            <button TYPE="SUBMIT" VALUE="Submit" class="form-control" />
+            <button TYPE="SUBMIT" VALUE="Submit" class="form-control">Submit</button>
         </form>
     </div>
 </div>
