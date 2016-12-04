@@ -5,6 +5,7 @@ import com.tmorency.edu.entity.Bills;
 import com.tmorency.edu.entity.Rental;
 import com.tmorency.edu.entity.RoomMate;
 import com.tmorency.edu.entity.UserBills;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,8 @@ import java.util.List;
  * Created by Tim on 12/3/2016.
  */
 public class BillCreator {
+
+    private final Logger log = Logger.getLogger(this.getClass());
 
     public BillsDao bd;
     public UsersDao ud;
@@ -51,12 +54,16 @@ public class BillCreator {
     }
 
 
-    public void insertAllUserBills(List<RoomMate> rs, Bills b) {
+    public void insertAllUserBills(List<RoomMate> rs, int bs) {
+        BillsDao bd = new BillsDao();
+        Bills b = bd.getBills(bs);
         UserBillsDao ubd = new UserBillsDao();
+        log.info("59" + b);
         for(RoomMate r : rs) {
             UserBills ub = new UserBills(b.getId(), r.getId(), b.getBill_amt()/rs.size()
                     , b.getDue_date(), 0, false);
-            ubd.insertNewUserBills(ub);
+            UserBills inserted = ubd.insertNewUserBills(ub);
+            log.info(inserted);
         }
     }
 

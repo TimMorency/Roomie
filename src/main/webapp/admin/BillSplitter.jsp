@@ -24,12 +24,13 @@
             </div>
             <div class="panel-body">
             <c:forEach items="${users}" var="u">
-                <input type="checkbox" id="${u.id}" name="${u.id}"/>${u.firstName} ${u.lastName}
+                <input type="checkbox" id="${u.id}" name="${u.id}"/>${u.id}: ${u.firstName} ${u.lastName}
                 <br />
             </c:forEach>
         </div>
         </div>
             <br/>
+        <input type="hidden" value="${bill.id}" name="bill" />
         <button TYPE="SUBMIT" VALUE="Submit" class="form-control">Submit</button>
     </form>
 

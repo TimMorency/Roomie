@@ -33,15 +33,23 @@ public class PushUserBillsServlet extends HttpServlet {
 
         List<RoomMate> selected = new ArrayList<RoomMate>();
 
+
         for(RoomMate r : returners) {
-            if(req.getParameter(String.valueOf(r.getId())) == "true") {
+            log.info(r.getFirstName());
+            log.info(req.getParameter(String.valueOf(r.getId())) );
+            if((String) req.getParameter(String.valueOf(r.getId())) != null) {
+                log.info(req.getParameter(String.valueOf(r.getId())) );
+
                 selected.add(r);
             }
         }
-        br.insertAllUserBills(selected, (Bills) req.getAttribute("bill"));
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/admin/Bills" +
-                ".jsp");
+        log.info(selected);
+        log.info(req.getParameter("bill"));
+
+        br.insertAllUserBills(selected, Integer.valueOf(req.getParameter("bill")));
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/admin/bill");
         dispatcher.forward(req, resp);
 
     }

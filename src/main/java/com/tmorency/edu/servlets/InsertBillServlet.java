@@ -48,14 +48,12 @@ public class InsertBillServlet extends HttpServlet {
 
         Bills passedBill = br.insertBill(b);
 
-        req.setAttribute("roommates", rms);
+        req.setAttribute("users", rms);
         req.setAttribute("rental", r);
         req.setAttribute("bill", passedBill);
 
-        //resp.sendRedirect("/admin/usersBillIn");
 
-
-        RequestDispatcher rd = req.getRequestDispatcher("/admin/usersBillIn");
+        RequestDispatcher rd = req.getRequestDispatcher("/admin/BillSplitter.jsp");
         rd.forward(req,resp);
 
     }
