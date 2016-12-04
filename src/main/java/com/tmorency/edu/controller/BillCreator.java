@@ -1,13 +1,12 @@
 package com.tmorency.edu.controller;
 
-import com.tmorency.edu.Daos.BillsDao;
-import com.tmorency.edu.Daos.RentalDao;
-import com.tmorency.edu.Daos.RoomMateDao;
-import com.tmorency.edu.Daos.UsersDao;
+import com.tmorency.edu.Daos.*;
 import com.tmorency.edu.entity.Bills;
 import com.tmorency.edu.entity.Rental;
 import com.tmorency.edu.entity.RoomMate;
+import com.tmorency.edu.entity.UserBills;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -51,5 +50,14 @@ public class BillCreator {
         return returnBill;
     }
 
+
+    public void insertAllUserBills(List<RoomMate> rs, Bills b) {
+        UserBillsDao ubd = new UserBillsDao();
+        for(RoomMate r : rs) {
+            UserBills ub = new UserBills(b.getId(), r.getId(), b.getBill_amt()/rs.size()
+                    , b.getDue_date(), 0, false);
+            ubd.insertNewUserBills(ub);
+        }
+    }
 
 }

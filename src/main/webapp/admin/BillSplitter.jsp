@@ -17,7 +17,7 @@
 
 <div style="margin:auto; width:70%;">
 
-    <form>
+    <form methoid="get" action="/admin/userBillFinish">
         <div style="width:60%;display:inline-block;height:400px;overflow-y:scroll;vertical-align: top;" class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">Split Bill With RoomMates</h3>

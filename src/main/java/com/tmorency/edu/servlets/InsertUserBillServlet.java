@@ -14,7 +14,8 @@ import java.io.IOException;
  * Created by Tim on 12/3/2016.
  */
 
-@WebServlet(name = "userBillIn", urlPatterns = { "/admin/userBillIn" } )
+@WebServlet(name = "userBillIn", urlPatterns = { "/admin/usersBillIn" } )
+
 public class InsertUserBillServlet extends HttpServlet {
 
     private final Logger log = Logger.getLogger(this.getClass());
@@ -28,9 +29,9 @@ public class InsertUserBillServlet extends HttpServlet {
         req.setAttribute("bill", req.getAttribute("bill"));
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/admin/BillSplitter" +
-                ".jsp");
+            ".jsp");
         dispatcher.forward(req, resp);
-    }
+}
 
 
 }

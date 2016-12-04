@@ -30,9 +30,10 @@ public class InsertBillServlet extends HttpServlet {
     private final Logger log = Logger.getLogger(this.getClass());
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        SimpleDateFormat formatter = new SimpleDateFormat("YYYY-mm-dd");
+
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         Date dueDate = null;
         try {
             dueDate = formatter.parse(req.getParameter("DueDate1"));
@@ -51,7 +52,11 @@ public class InsertBillServlet extends HttpServlet {
         req.setAttribute("rental", r);
         req.setAttribute("bill", passedBill);
 
-        RequestDispatcher rd = req.getRequestDispatcher("/admin/userBillIn");
+        //resp.sendRedirect("/admin/usersBillIn");
+
+
+        RequestDispatcher rd = req.getRequestDispatcher("/admin/usersBillIn");
         rd.forward(req,resp);
+
     }
 }

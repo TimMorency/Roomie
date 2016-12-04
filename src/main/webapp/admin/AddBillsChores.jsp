@@ -50,7 +50,7 @@
 </div>
 
     <div style="width:45%; float: right;">
-        <form action="/admin/billIn" method="GET">
+        <form action="/admin/billIn" method="POST">
             <h2>Add a Bill</h2>
             <div class="form-group" style="width: 60%; float: left; margin: 2em;">
                 Bill Name
