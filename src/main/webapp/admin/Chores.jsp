@@ -39,11 +39,13 @@
             <tr>
                 <th>My Chore</th>
                 <th>Due Date</th>
+                <th>Completed</th>
             </tr>
             <c:forEach items="${uChores}" var="ub">
                 <tr>
                     <td>${ub.chore_id}</td>
                     <td>${ub.due_date}</td>
+                    <td>${ub.completed}</td>
                 </tr>
             </c:forEach>
         </table>

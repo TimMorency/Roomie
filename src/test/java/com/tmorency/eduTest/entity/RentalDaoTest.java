@@ -1,6 +1,6 @@
 package com.tmorency.eduTest.entity;
 
-import com.tmorency.edu.controller.RentalDao;
+import com.tmorency.edu.Daos.RentalDao;
 import com.tmorency.edu.entity.Rental;
 import org.apache.log4j.Logger;
 import org.junit.Before;

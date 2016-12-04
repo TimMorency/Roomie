@@ -11,7 +11,7 @@
 <jsp:include page="head.jsp"></jsp:include>
 <script type="text/javascript">
     function checkDisplay() {
-        alert(event.srcElement.id);
+        //todo alert(event.srcElement.id);
         if(event.srcElement.id == "optionsRadios1") {
             //alert("id");
             var ele = document.getElementById("ifRentalTrue");
@@ -19,7 +19,7 @@
             var ele2 = document.getElementById("ifRentalFalse");
             ele2.style.display = "none";
         } else if(event.srcElement.id == "optionsRadios2") {
-            alert("id");
+            //alert("id");
             var ele = document.getElementById("ifRentalFalse");
             ele.style.display = "block";
             var ele2 = document.getElementById("ifRentalTrue");

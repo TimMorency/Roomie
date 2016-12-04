@@ -1,6 +1,6 @@
 package com.tmorency.eduTest.entity;
 
-import com.tmorency.edu.controller.ChoresDao;
+import com.tmorency.edu.Daos.ChoresDao;
 import com.tmorency.edu.entity.Chores;
 import org.apache.log4j.Logger;
 import org.junit.Before;

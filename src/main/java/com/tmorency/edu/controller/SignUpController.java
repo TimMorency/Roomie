@@ -1,5 +1,9 @@
 package com.tmorency.edu.controller;
 
+import com.tmorency.edu.Daos.RentalDao;
+import com.tmorency.edu.Daos.RoomMateDao;
+import com.tmorency.edu.Daos.UserRolesDao;
+import com.tmorency.edu.Daos.UsersDao;
 import com.tmorency.edu.entity.Rental;
 import com.tmorency.edu.entity.RoomMate;
 import com.tmorency.edu.entity.UserRoles;

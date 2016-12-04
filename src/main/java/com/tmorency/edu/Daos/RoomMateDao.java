@@ -1,6 +1,6 @@
-package com.tmorency.edu.controller;
+package com.tmorency.edu.Daos;
 
-import com.tmorency.edu.entity.Chores;
+import com.tmorency.edu.entity.RoomMate;
 import com.tmorency.edu.persistence.SessionFactoryProvider;
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
@@ -11,48 +11,57 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Tim on 10/11/2016.
+ * Created by Tim on 9/13/2016.
+ * comments ++
+ * need to add lookup on the rooMate object in database.
+ * also need to fix name capitalization in java classes.
+ * add new object for house and add chores/ bills as well.
  */
-
-public class ChoresDao {
+public class RoomMateDao {
 
     private final Logger logger = Logger.getLogger(this.getClass());
 
-    public List<Chores> getAllChores() {
-        List<Chores> rms = new ArrayList<Chores>();
+    public List<RoomMate> getAllRoomies() {
+        List<RoomMate> rms = new ArrayList<RoomMate>();
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        rms = session.createCriteria(Chores.class).list();
+        rms = session.createCriteria(RoomMate.class).list();
+        session.close();
         return rms;
     }
 
-    public Chores getChores(int id) {
+    public RoomMate getRoomMate(int id) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        Chores rm = (Chores) session.get(Chores.class, id);
+        RoomMate rm = (RoomMate) session.get(RoomMate.class, id);
+        session.close();
         return rm;
     }
 
-    public Chores insertNewChores(Chores rm) {
+    public RoomMate insertNewRoomMate(RoomMate rm) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         session.beginTransaction();
         session.save(rm);
         session.getTransaction().commit();
+        session.close();
         return rm;
     }
 
-    public List<Chores> searchChores(String fieldName, int searchVal) {
+    public List<RoomMate> searchRoomMates(String fieldName, String searchVal) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        Criteria criteria = session.createCriteria(Chores.class);
+        Criteria criteria = session.createCriteria(RoomMate.class);
         criteria.add(Restrictions.eq(fieldName, searchVal));
-        return criteria.list();
+        List<RoomMate> rms = new ArrayList<RoomMate>();
+        rms = criteria.list();
+        session.close();
+        return rms;
     }
 
-    public Chores deleteChores(int id) {
-        Chores rm = getChores(id);
+    public RoomMate deleteRoomMate(int id) {
+        RoomMate rm = getRoomMate(id);
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         session.beginTransaction();
         session.delete(rm);
         session.getTransaction().commit();
+        session.close();
         return rm;
     }
 }
-

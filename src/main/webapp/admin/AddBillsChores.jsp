@@ -1,4 +1,4 @@
-<%--
+'''''''''''''''''''''''8888888888888888888888888888<%--
   Created by IntelliJ IDEA.
   User: Tim
   Date: 11/28/2016
@@ -13,6 +13,61 @@
 </head>
 <body>
 <jsp:include page="loggedInHeader.jsp"></jsp:include>
+
+
+<div style="margin:auto; width:70%;">
+<div style="width:45%; float: left;">
+<form>
+    <h2>Add a Bill</h2>
+    <!--
+    <div style="width: 40%; float: left; margin: 2em;">
+    <label for="selectUser">Select a User</label>
+    <select id="selectUser" class="form-control">
+        <option>1</option>
+    </select>
+</div>
+    <div style="width: 40%; float: left; margin: 2em;">
+        <label for="selectChore">Select a User</label>
+        <select id="selectChore" class="form-control">
+            <option>1</option>
+        </select>
+    </div> -->
+    <div class="form-group" style="width: 60%; float: left; margin: 2em;">
+        Chore Name
+        <input type="text" class="form-control" name="choreName">
+    </div>
+    <div class="form-group" style="width: 60%; float: left; margin: 2em;">
+        Chore Description
+        <input type="text" class="form-control" id="choreDescription">
+    </div>
+    <div class="form-group" style="width: 60%; float: left; margin: 2em;">
+        Due Date
+        <input type="date" class="form-control" name="dueDate" id="DueDate">
+    </div>
+
+    <button TYPE="SUBMIT" VALUE="Submit" class="form-control" />
+</form>
+</div>
+
+    <div style="width:45%; float: right;">
+        <form>
+            <h2>Add a Bill</h2>
+            <div class="form-group" style="width: 60%; float: left; margin: 2em;">
+                Bill Name
+                <input type="text" class="form-control" id="billName">
+            </div>
+            <div class="form-group" style="width: 60%; float: left; margin: 2em;">
+                Amount
+                <input type="number" class="form-control" id="Amt">
+            </div>
+            <div class="form-group" style="width: 60%; float: left; margin: 2em;">
+                <label for="DueDate1">Due Date</label>
+                <input type="date" class="form-control" id="DueDate1">
+            </div>
+            <button TYPE="SUBMIT" VALUE="Submit" class="form-control" />
+        </form>
+    </div>
+</div>
 <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

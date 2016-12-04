@@ -12,6 +12,7 @@ To change this template use File | Settings | File Templates.
             <a class="navbar-brand" href="/admin/bill">Bills</a>
             <a class="navbar-brand" href="/admin/chore">Chores</a>
             <a class="navbar-brand" href="/admin/AddBillsChores.jsp">Add Bills/Chores</a>
+            <!--todo add logout -->
         </div>
 
     </div>

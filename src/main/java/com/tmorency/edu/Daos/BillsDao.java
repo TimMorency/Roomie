@@ -1,7 +1,8 @@
-package com.tmorency.edu.controller;
+package com.tmorency.edu.Daos;
 
-import com.tmorency.edu.entity.UserRoles;
+import com.tmorency.edu.entity.Bills;
 import com.tmorency.edu.persistence.SessionFactoryProvider;
+import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
@@ -12,43 +13,53 @@ import java.util.List;
 /**
  * Created by Tim on 10/11/2016.
  */
-public class UserRolesDao {
 
-    public List<UserRoles> getAllUserRoles() {
-        List<UserRoles> rms = new ArrayList<UserRoles>();
+public class BillsDao {
+
+    private final Logger logger = Logger.getLogger(this.getClass());
+
+    public List<Bills> getAllBills() {
+        List<Bills> rms = new ArrayList<Bills>();
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        rms = session.createCriteria(UserRoles.class).list();
+        rms = session.createCriteria(Bills.class).list();
+        session.close();
         return rms;
     }
 
-    public UserRoles getUser(String user_name) {
+    public Bills getBills(int id) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        UserRoles rm = (UserRoles) session.get(UserRoles.class, user_name);
+        Bills rm = (Bills) session.get(Bills.class, id);
+        session.close();
         return rm;
     }
 
-    public UserRoles insertUser(UserRoles rm) {
+    public Bills insertNewBills(Bills rm) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         session.beginTransaction();
         session.save(rm);
         session.getTransaction().commit();
+        session.close();
         return rm;
     }
 
-    public List<UserRoles> searchUserRoles(String fieldName, String searchVal) {
+    public List<Bills> searchBills(String fieldName, int searchVal) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        Criteria criteria = session.createCriteria(UserRoles.class);
+        Criteria criteria = session.createCriteria(Bills.class);
         criteria.add(Restrictions.eq(fieldName, searchVal));
-        return criteria.list();
+        List<Bills> bs = new ArrayList<Bills>();
+        bs = criteria.list();
+        session.close();
+        return bs;
     }
 
-    public UserRoles deleteUser(String user_name) {
-        UserRoles rm = getUser(user_name);
+    public Bills deleteBills(int id) {
+        Bills rm = getBills(id);
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         session.beginTransaction();
         session.delete(rm);
         session.getTransaction().commit();
+        session.close();
         return rm;
     }
-
 }
+

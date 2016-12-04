@@ -1,4 +1,4 @@
-package com.tmorency.edu.controller;
+package com.tmorency.edu.Daos;
 
 import com.tmorency.edu.entity.Bills;
 import com.tmorency.edu.entity.UserBills;
@@ -23,12 +23,14 @@ public class UserBillsDao {
         List<UserBills> rms = new ArrayList<UserBills>();
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         rms = session.createCriteria(UserBills.class).list();
+        session.close();
         return rms;
     }
 
     public UserBills getUserBills(int id) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         UserBills rm = (UserBills) session.get(UserBills.class, id);
+        session.close();
         return rm;
     }
 
@@ -37,6 +39,7 @@ public class UserBillsDao {
         session.beginTransaction();
         session.save(rm);
         session.getTransaction().commit();
+        session.close();
         return rm;
     }
 
@@ -44,7 +47,10 @@ public class UserBillsDao {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(UserBills.class);
         criteria.add(Restrictions.eq(fieldName, searchVal));
-        return criteria.list();
+        List<UserBills> ubs = new ArrayList<UserBills>();
+        ubs = criteria.list();
+        session.close();
+        return ubs;
     }
 
     public List<UserBills> searchInUserBills(List<Integer> bs) {
@@ -52,6 +58,7 @@ public class UserBillsDao {
         Criteria criteria = session.createCriteria(UserBills.class);
         criteria.add(Restrictions.in("bill_id", bs));
         List<UserBills> returnList = criteria.list();
+        session.close();
         return returnList;
     }
 
@@ -61,6 +68,7 @@ public class UserBillsDao {
         session.beginTransaction();
         session.delete(rm);
         session.getTransaction().commit();
+        session.close();
         return rm;
     }
 }

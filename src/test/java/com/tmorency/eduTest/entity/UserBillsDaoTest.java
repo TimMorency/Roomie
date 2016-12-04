@@ -1,8 +1,6 @@
 package com.tmorency.eduTest.entity;
 
-import com.tmorency.edu.controller.RoomMateDao;
-import com.tmorency.edu.controller.UserBillsDao;
-import com.tmorency.edu.entity.Chores;
+import com.tmorency.edu.Daos.UserBillsDao;
 import com.tmorency.edu.entity.UserBills;
 import org.apache.log4j.Logger;
 import org.junit.Before;

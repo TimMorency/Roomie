@@ -2,12 +2,11 @@ package com.tmorency.eduTest.entity;
 
 import com.tmorency.edu.entity.Bills;
 import org.apache.log4j.Logger;
-import com.tmorency.edu.controller.BillsDao;
+import com.tmorency.edu.Daos.BillsDao;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.*;

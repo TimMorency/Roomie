@@ -1,13 +1,8 @@
 package com.tmorency.edu.servlets;
 
-import com.tmorency.edu.controller.RoomMateDao;
 import com.tmorency.edu.controller.SignUpController;
-import com.tmorency.edu.controller.UsersDao;
-import com.tmorency.edu.entity.RoomMate;
-import com.tmorency.edu.entity.Users;
 import org.apache.log4j.Logger;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

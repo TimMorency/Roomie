@@ -1,8 +1,6 @@
 package com.tmorency.eduTest.entity;
 
-import com.tmorency.edu.controller.RoomMateDao;
-import com.tmorency.edu.controller.UserChoresDao;
-import com.tmorency.edu.entity.Chores;
+import com.tmorency.edu.Daos.UserChoresDao;
 import com.tmorency.edu.entity.UserChores;
 import org.apache.log4j.Logger;
 import org.junit.Before;
@@ -50,7 +48,7 @@ public class UserChoresDaoTest {
 
     @Test
     public void insertNewUserChores() throws Exception {
-        UserChores ub = new UserChores(1, 1, 1, new Date());
+        UserChores ub = new UserChores( 1, 1, new Date(),true);
         UserChores ub2 = rmd.insertNewUserChores(ub);
 
         assert(ub2.getId() > 0);

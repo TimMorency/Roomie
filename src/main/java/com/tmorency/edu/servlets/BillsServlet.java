@@ -1,6 +1,5 @@
 package com.tmorency.edu.servlets;
 
-import com.tmorency.edu.controller.BillsDao;
 import com.tmorency.edu.controller.BillsRetriever;
 import org.apache.log4j.Logger;
 

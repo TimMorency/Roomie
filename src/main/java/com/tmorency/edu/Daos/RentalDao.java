@@ -1,6 +1,6 @@
-package com.tmorency.edu.controller;
+package com.tmorency.edu.Daos;
 
-import com.tmorency.edu.entity.UserChores;
+import com.tmorency.edu.entity.Rental;
 import com.tmorency.edu.persistence.SessionFactoryProvider;
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
@@ -14,44 +14,51 @@ import java.util.List;
  * Created by Tim on 10/11/2016.
  */
 
-public class UserChoresDao {
+public class RentalDao {
 
     private final Logger logger = Logger.getLogger(this.getClass());
 
-    public List<UserChores> getAllUserChores() {
-        List<UserChores> rms = new ArrayList<UserChores>();
+    public List<Rental> getAllRental() {
+        List<Rental> rms = new ArrayList<Rental>();
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        rms = session.createCriteria(UserChores.class).list();
+        rms = session.createCriteria(Rental.class).list();
+        session.close();
         return rms;
     }
 
-    public UserChores getUserChores(int id) {
+    public Rental getRental(int id) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        UserChores rm = (UserChores) session.get(UserChores.class, id);
+        Rental rm = (Rental) session.get(Rental.class, id);
+        session.close();
         return rm;
     }
 
-    public UserChores insertNewUserChores(UserChores rm) {
+    public Rental insertNewRental(Rental rm) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         session.beginTransaction();
         session.save(rm);
         session.getTransaction().commit();
+        session.close();
         return rm;
     }
 
-    public List<UserChores> searchUserChoress(String fieldName, int searchVal) {
+    public List<Rental> searchRentals(String fieldName, String searchVal) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        Criteria criteria = session.createCriteria(UserChores.class);
+        Criteria criteria = session.createCriteria(Rental.class);
         criteria.add(Restrictions.eq(fieldName, searchVal));
-        return criteria.list();
+        List<Rental> rs = new ArrayList<Rental>();
+        rs = criteria.list();
+        session.close();
+        return rs;
     }
 
-    public UserChores deleteUserChores(int id) {
-        UserChores rm = getUserChores(id);
+    public Rental deleteRental(int id) {
+        Rental rm = getRental(id);
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         session.beginTransaction();
         session.delete(rm);
         session.getTransaction().commit();
+        session.close();
         return rm;
     }
 }

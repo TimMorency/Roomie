@@ -23,15 +23,17 @@ public class UserChores {
     private int roommate_id;
     @Column(name = "due_date")
     private Date due_date;
+    @Column(name = "completed")
+    private boolean completed;
 
     public UserChores() {
     }
 
-    public UserChores(int id, int chore_id, int roommate_id, Date due_date) {
-        this.id = id;
+    public UserChores(int chore_id, int roommate_id, Date due_date, boolean completed) {
         this.chore_id = chore_id;
         this.roommate_id = roommate_id;
         this.due_date = due_date;
+        this.completed = completed;
     }
 
     public int getId() {
@@ -66,13 +68,22 @@ public class UserChores {
         this.due_date = due_date;
     }
 
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
+    }
+
     @Override
     public String toString() {
         return "UserChores{" +
                 "id=" + id +
                 ", chore_id=" + chore_id +
-                ", rommate_id=" + roommate_id +
+                ", roommate_id=" + roommate_id +
                 ", due_date=" + due_date +
+                ", completed=" + completed +
                 '}';
     }
 }

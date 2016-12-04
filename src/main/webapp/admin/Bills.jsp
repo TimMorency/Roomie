@@ -12,6 +12,7 @@
 <head>
     <title>Bills</title>
     <jsp:include page="head.jsp" />
+
 </head>
 <body>
 <jsp:include page="loggedInHeader.jsp"></jsp:include>

@@ -30,8 +30,7 @@ public class Bills {
     public Bills() {
     }
 
-    public Bills(int id, String bill_name, int bill_amt, Date due_date, int rentalId) {
-        this.id = id;
+    public Bills(String bill_name, int bill_amt, Date due_date, int rentalId) {
         this.bill_name = bill_name;
         this.bill_amt = bill_amt;
         this.due_date = due_date;
