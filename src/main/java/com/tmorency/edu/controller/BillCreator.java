@@ -60,6 +60,7 @@ public class BillCreator {
         UserBillsDao ubd = new UserBillsDao();
         log.info("59" + b);
         for(RoomMate r : rs) {
+            log.info(b.getDue_date());
             UserBills ub = new UserBills(b.getId(), r.getId(), b.getBill_amt()/rs.size()
                     , b.getDue_date(), 0, false);
             UserBills inserted = ubd.insertNewUserBills(ub);

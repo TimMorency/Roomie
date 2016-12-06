@@ -45,7 +45,7 @@ public class ChoresDaoTest {
 
     @Test
     public void insertNewChoresAndDelete() throws Exception {
-        Chores ch = new Chores(2, "test2", "test2", 1);
+        Chores ch = new Chores("test2", "test2", 1);
         Chores ch2 = rmd.insertNewChores(ch);
         assertEquals(ch2.getChore_name(), ch.getChore_name());
         Chores ch3 = rmd.deleteChores(ch2.getId());

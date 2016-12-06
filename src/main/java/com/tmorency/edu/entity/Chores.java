@@ -27,8 +27,8 @@ public class Chores {
     public Chores() {
     }
 
-    public Chores(int id, String chore_name, String chore_description, int rental_id) {
-        this.id = id;
+    public Chores(String chore_name, String chore_description, int rental_id) {
+
         this.chore_name = chore_name;
         this.chore_description = chore_description;
         this.rental_id = rental_id;

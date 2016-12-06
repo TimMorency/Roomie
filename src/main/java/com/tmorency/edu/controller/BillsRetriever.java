@@ -33,7 +33,7 @@ public class BillsRetriever {
         rmd = new RoomMateDao();
         ubd = new UserBillsDao();
         List<RoomMate> roomie = rmd.searchRoomMates("user_name_fk", uName);
-        RoomMate room = roomie.get(0);
+        room = roomie.get(0);
         log.info(room.getLastName());
         log.info(room.getRentalId());
         rent = rd.getRental(room.getRentalId());
@@ -58,7 +58,7 @@ public class BillsRetriever {
 
         List<UserBills> nonPaid = new ArrayList<UserBills>();
         for(UserBills ub : userBills) {
-            if(ub.isPaid() == false) {
+            if(ub.isPaid() == false && ub.getRoommate_id() == room.getId()) {
                 nonPaid.add(ub);
             }
         }

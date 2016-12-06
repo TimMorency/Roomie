@@ -22,12 +22,14 @@
         <h2 style="text-align: center;">Rentals Bills</h2>
         <table class="table table-hover" style="overflow-y: scroll;">
             <tr>
+                <th>Bill Id</th>
                 <th>Bill Name</th>
                 <th>Bill Amount</th>
                 <th>Due Date</th>
             </tr>
             <c:forEach items="${bills}" var="b">
                 <tr>
+                    <td>${b.id}</td>
                     <td>${b.bill_name}</td>
                     <td>${b.bill_amt}</td>
                     <td>${b.due_date}</td>
@@ -39,15 +41,17 @@
         <h2 style="text-align: center;">My Bills</h2>
         <table class="table table-hover" style="overflow-y: scroll;">
             <tr>
+                <th>Bill Id</th>
                 <th>My Amount Due</th>
                 <th>My Amount Paid</th>
                 <th>My Pay By Date</th>
             </tr>
             <c:forEach items="${userBills}" var="ub">
                 <tr>
+                    <td>${ub.bill_id}</td>
                     <td>${ub.split_amt}</td>
                     <td>${ub.paid_amt}</td>
-                    <td>${pay_by}</td>
+                    <td>${ub.pay_by}</td>
                 </tr>
             </c:forEach>
         </table>

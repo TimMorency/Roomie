@@ -17,32 +17,15 @@
 
 <div style="margin:auto; width:70%;">
 <div style="width:45%; float: left;">
-<form>
+<form action="/admin/choreIn" method="get">
     <h2>Add a Bill</h2>
-    <!--
-    <div style="width: 40%; float: left; margin: 2em;">
-    <label for="selectUser">Select a User</label>
-    <select id="selectUser" class="form-control">
-        <option>1</option>
-    </select>
-</div>
-    <div style="width: 40%; float: left; margin: 2em;">
-        <label for="selectChore">Select a User</label>
-        <select id="selectChore" class="form-control">
-            <option>1</option>
-        </select>
-    </div> -->
     <div class="form-group" style="width: 60%; float: left; margin: 2em;">
         Chore Name
         <input type="text" class="form-control" name="choreName" required>
     </div>
     <div class="form-group" style="width: 60%; float: left; margin: 2em;">
         Chore Description
-        <input type="text" class="form-control" id="choreDescription" required>
-    </div>
-    <div class="form-group" style="width: 60%; float: left; margin: 2em;">
-        Due Date
-        <input type="date" class="form-control" name="dueDate" id="DueDate" required>
+        <input type="text" class="form-control" id="choreDescription" name="choreDescription" required>
     </div>
 
     <button TYPE="SUBMIT" VALUE="Submit" class="form-control">Submit</button>
