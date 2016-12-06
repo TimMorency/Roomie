@@ -18,7 +18,7 @@
 <div style="margin:auto; width:70%;">
 <div style="width:45%; float: left;">
 <form action="/admin/choreIn" method="get">
-    <h2>Add a Bill</h2>
+    <h2>Add a Chore</h2>
     <div class="form-group" style="width: 60%; float: left; margin: 2em;">
         Chore Name
         <input type="text" class="form-control" name="choreName" required>

@@ -1,6 +1,7 @@
 package com.tmorency.edu.servlets;
 
 import com.tmorency.edu.controller.HomeRetriever;
+import com.tmorency.edu.entity.UserChores;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -10,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Tim on 12/1/2016.
@@ -25,7 +28,14 @@ public class ChoresServlet extends HttpServlet {
 
         HomeRetriever hr = new HomeRetriever(req.getUserPrincipal().getName());
         req.setAttribute("chores", hr.rentalsChores());
-        req.setAttribute("uChores", hr.getUserChores());
+        List<UserChores> ucs = new ArrayList<UserChores>();
+        for(UserChores uc : hr.getUserChores()) {
+            if(uc.isCompleted() != true) {
+                ucs.add(uc);
+            }
+        }
+
+        req.setAttribute("uChores", ucs);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/admin/Chores" +
                 ".jsp");

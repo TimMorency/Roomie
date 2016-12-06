@@ -54,8 +54,9 @@ public class BillsRetriever {
             billIds.add(b.getId());
         }
         List<UserBills> userBills = new ArrayList<UserBills>();
-        userBills = ubd.searchInUserBills(billIds);
-
+        if(billIds.size() >0) {
+            userBills = ubd.searchInUserBills(billIds);
+        }
         List<UserBills> nonPaid = new ArrayList<UserBills>();
         for(UserBills ub : userBills) {
             if(ub.isPaid() == false && ub.getRoommate_id() == room.getId()) {

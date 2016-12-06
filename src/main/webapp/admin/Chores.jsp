@@ -43,7 +43,7 @@
             </tr>
             <c:forEach items="${uChores}" var="ub">
                 <tr>
-                    <td>${ub.chore_id}</td>
+                    <td><a href="/admin/uc?userchore=${ub.id}">${ub.chore_id}</a></td>
                     <td>${ub.due_date}</td>
                     <td>${ub.completed}</td>
                 </tr>

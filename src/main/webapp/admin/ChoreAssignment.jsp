@@ -17,7 +17,7 @@
 
 <div style="margin:auto; width:70%;">
 
-    <form methoid="post" action="/admin/userChoreIn">
+    <form methoid="get" action="/admin/userchore">
         <div style="width:45%;display:inline-block;height:400px;overflow-y:scroll;vertical-align: top;" class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">Select RoomMate</h3>
@@ -36,15 +36,16 @@
             </div>
             <div class="panel-body">
                 <c:forEach items="${chores}" var="c">
-                    <input type="checkbox" id="${c.id}" name="chore" value="${c.id}"/>${u.id}: ${u.chore_name}
+                    <input type="radio" id="${c.id}" name="chore" value="${c.id}"/>${c.id}: ${c.chore_name}
                     <br />
                 </c:forEach>
             </div>
         </div>
         <br/>
         Chore Due Date:
-        <input type="date" name="DueDate1" id="date" class="form-control">
-        <input type="hidden" value="${bill.id}" name="bill" />
+        <input type="date" name="DueDate1" id="date" class="form-control"
+        style="width: 50%;" required>
+        <br/>
         <button TYPE="SUBMIT" VALUE="Submit" class="form-control">Submit</button>
     </form>
 

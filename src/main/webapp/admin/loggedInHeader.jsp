@@ -13,7 +13,7 @@ To change this template use File | Settings | File Templates.
             <a class="navbar-brand" href="/admin/chore">Chores</a>
             <a class="navbar-brand" href="/admin/AddBillsChores.jsp">Add Bills/Chores</a>
             <a class="navbar-brand" href="/admin/userChoreIn">Assign Chores</a>
-            <a class="navbar-brand" href="#">Logout</a>
+            <a class="navbar-brand" href="/admin/logout">Logout</a>
             <!--todo add logout -->
         </div>
 

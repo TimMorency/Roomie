@@ -47,12 +47,14 @@
                 <th>My Pay By Date</th>
             </tr>
             <c:forEach items="${userBills}" var="ub">
+
                 <tr>
-                    <td>${ub.bill_id}</td>
+                    <td><a href="/admin/ub?userBill=${ub.id}">${ub.bill_id}</a></td>
                     <td>${ub.split_amt}</td>
                     <td>${ub.paid_amt}</td>
                     <td>${ub.pay_by}</td>
                 </tr>
+
             </c:forEach>
         </table>
     </div>

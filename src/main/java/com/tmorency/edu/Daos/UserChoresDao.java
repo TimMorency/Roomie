@@ -52,6 +52,14 @@ public class UserChoresDao {
         return ucs;
     }
 
+    public void updateUserChore(UserChores uc) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.update(uc);
+        session.getTransaction().commit();
+        session.close();
+    }
+
     public UserChores deleteUserChores(int id) {
         UserChores rm = getUserChores(id);
         Session session = SessionFactoryProvider.getSessionFactory().openSession();

@@ -53,6 +53,16 @@ public class UserBillsDao {
         return ubs;
     }
 
+    public List<UserBills> searchUserBills(String fieldName, String searchVal) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Criteria criteria = session.createCriteria(UserBills.class);
+        criteria.add(Restrictions.eq(fieldName, searchVal));
+        List<UserBills> ubs = new ArrayList<UserBills>();
+        ubs = criteria.list();
+        session.close();
+        return ubs;
+    }
+
     public List<UserBills> searchInUserBills(List<Integer> bs) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(UserBills.class);
@@ -60,6 +70,14 @@ public class UserBillsDao {
         List<UserBills> returnList = criteria.list();
         session.close();
         return returnList;
+    }
+
+    public void updateUB(UserBills ub) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.update(ub);
+        session.getTransaction().commit();
+        session.close();
     }
 
     public UserBills deleteUserBills(int id) {

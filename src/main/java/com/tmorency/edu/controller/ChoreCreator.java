@@ -41,7 +41,7 @@ public class ChoreCreator {
     public List<Chores> returnAllChores() {
         List<RoomMate> rms = rmd.searchRoomMates("user_name_fk", userName);
         RoomMate roomie = rms.get(0);
-        List<Chores> cs = cd.searchChores("rentalId", roomie.getRentalId());
+        List<Chores> cs = cd.searchChores("rental_id", roomie.getRentalId());
         return cs;
     }
 
@@ -56,6 +56,7 @@ public class ChoreCreator {
     public void insertUserChores(int choreid, int roommateid, Date assignedDate) {
         UserChores uc = new UserChores(choreid, roommateid, assignedDate, false);
         UserChoresDao ucd = new UserChoresDao();
+
         ucd.insertNewUserChores(uc);
     }
 }
