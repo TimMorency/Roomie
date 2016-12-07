@@ -38,7 +38,7 @@ public class UsersDaoTest {
     @Test
     public void getUsers() throws Exception {
         //int id, String bill_name, int bill_amt, Date due_date, int rentalId
-        String tester = "tester";
+        String tester = "admin";
 
         Users rm = bl.getUser(tester);
         logger.info(rm);
@@ -50,7 +50,7 @@ public class UsersDaoTest {
     @Test
     public void searchUsers() throws Exception {
         List<Users> rms = new ArrayList<Users>();
-        rms = bl.searchUsers("user_name", "tester");
+        rms = bl.searchUsers("user_name", "admin");
         logger.info(rms);
         assertTrue(rms.size() > 0);
     }

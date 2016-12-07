@@ -27,27 +27,28 @@
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 <div style="width:80%;margin:auto;">
-    <form action="/signUp" method="post">
+    <div>${errorMsg}</div>
+    <form action="/signUp" method="post" style="">
         <div>
         <div class="form-group">
             <label for="FirstName">First Name</label>
-            <input type="text" name="FirstName" class="form-control" id="FirstName" placeholder="first name">
+            <input type="text" name="FirstName" class="form-control" id="FirstName" placeholder="first name" required>
         </div>
         <div class="form-group">
             <label for="LastName">Last Name</label>
-            <input type="text" name="LastName" class="form-control" id="LastName" placeholder="last name">
+            <input type="text" name="LastName" class="form-control" id="LastName" placeholder="last name" required>
         </div>
         <div class="form-group">
             <label for="Email1">Email address</label>
-            <input type="email" name="Email1" class="form-control" id="Email1" placeholder="Email">
+            <input type="email" name="Email1" class="form-control" id="Email1" placeholder="Email" required>
         </div>
         <div class="form-group">
             <label for="Phone">Phone</label>
-            <input type="text" name="Phone" class="form-control" id="Phone" placeholder="phone">
+            <input type="text" name="Phone" class="form-control" id="Phone" placeholder="phone" required>
         </div>
         <div class="radio" id="option1" onchange="checkDisplay()">
             <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" >
+                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" required>
                 Joining a House
             </label>
         </div>
@@ -95,17 +96,16 @@
         </div>
         <div class="form-group">
             <label for="UserName">User Name</label>
-            <input type="text" name="UserName" class="form-control" id="UserName" placeholder="username">
+            <input type="text" name="UserName" class="form-control" id="UserName" placeholder="username" required>
         </div>
         <div class="form-group">
             <label for="Password">Password</label>
-            <input type="password" name="Password" class="form-control" id="Password" >
+            <input type="password" name="Password" class="form-control" id="Password" required>
         </div>
 
         </div>
         <br/>
-        <button type="submit" class="btn btn-default col-sm-offset-3"
-                data-disable="true" style="display: block;">Submit
+        <button type="submit" class="btn btn-default col-sm-offset-3"style="display: block;margin-bottom:4em;">Submit
         </button>
     </form>
 </div>

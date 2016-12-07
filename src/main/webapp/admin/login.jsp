@@ -10,22 +10,6 @@
             width: 40%;
         }
     </style>
-    <!--<script type="text/javascript">
-
-        var geocoder = new google.maps.Geocoder();
-        var address = document.getElementById("addr").value;
-
-        alert(address);
-
-        geocoder.geocode( { 'address': address}, function(results, status) {
-
-            if (status == google.maps.GeocoderStatus.OK) {
-                var latitude = results[0].geometry.location.lat();
-                var longitude = results[0].geometry.location.lng();
-                alert(latitude);
-            }
-        });
-    </script>-->
 </head>
 <body>
 <jsp:include page="loggedInHeader.jsp"></jsp:include>
