@@ -5,7 +5,17 @@
 <jsp:include page="head.jsp"></jsp:include>
   <body>
 <jsp:include page="header.jsp"></jsp:include>
-    <h2>Hello</h2>
+<div style="width: 70%;margin: auto;">
+    <div class="jumbotron">
+    <h1>Hello</h1>
+    <p>Welcome To Roomie!</p>
+    <p>Roomie is a site that helps you track information between you and your Room mates!
+    <br/>
+        <a href="/AboutUs.jsp">Learn More</a>
+    </p>
+</div>
+
+    </div>
   <jsp:include page="footer.jsp"/>
   </body>
 </html>

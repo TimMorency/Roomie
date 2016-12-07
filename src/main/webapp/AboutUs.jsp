@@ -13,6 +13,7 @@
 <jsp:include page="head.jsp"></jsp:include>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
+<div style="width: 70%;margin: auto;">
 <h2>Roomie</h2>
 <br/>
 <p>Roomie is a website designed to help track bills and chores with your roommates. It allows you to create bills and
@@ -48,6 +49,7 @@ help sort out every day life with room mates.
 <p>
     Thanks for reading now go out and organize with your messy room mates, good luck and have fun.
 </p>
+</div>
 <jsp:include page="footer.jsp"/>
 </body>
 </html>
